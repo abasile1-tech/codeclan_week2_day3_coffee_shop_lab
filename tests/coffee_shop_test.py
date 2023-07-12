@@ -47,4 +47,6 @@ class TestCoffeeShop(unittest.TestCase):
     # A CoffeeShop should be able to sell a drink to a customer and increase it's till by the price of Drink. 
     # Hint: Use a Customer method you already have.
     def test_coffee_shop_can_sell_drink(self):
-        pass
+        self.coffee_shop.sell_drink(self.steve, self.latte)
+        self.assertEqual(503, self.coffee_shop.till)
+        self.assertEqual(97, self.steve.wallet)

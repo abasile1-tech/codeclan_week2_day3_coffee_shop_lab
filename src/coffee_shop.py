@@ -5,4 +5,4 @@ class CoffeeShop:
 		self.drinks = drinks
 
 	def sell_drink(self, customer, drink):
-		till -= customer.buy_drink(drink)
+		self.till += customer.buy_drink(drink)
