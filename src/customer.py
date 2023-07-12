@@ -4,8 +4,8 @@ class Customer:
 		self.wallet = wallet
 
 	def spend_money(self, amount):
-		wallet -= amount
+		self.wallet -= amount
 		return amount
 
 	def buy_drink(self, drink):
-		self.spend_money(drink.price)
+		return self.spend_money(drink.price)

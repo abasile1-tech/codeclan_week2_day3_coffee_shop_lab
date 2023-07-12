@@ -3,12 +3,6 @@ from src.coffee_shop import CoffeeShop
 from src.drink import Drink
 from src.customer import Customer
 
-
-# A CoffeeShop should be able to sell a drink to a customer and increase it's till by the price of Drink. 
-# Hint: Use a Customer method you already have.
-
-
-
 class TestCoffeeShop(unittest.TestCase):
     def setUp(self):
         self.mocha = Drink("Mocha",5)
@@ -40,10 +34,17 @@ class TestCoffeeShop(unittest.TestCase):
     # A Customer should have method which reduces the wallet by a specified amount as a parameter
     # A Customer should be able to buy a Drink and reduce their wallet by the Drink's price.
     def test_customer_has_name(self):
-        pass
+        self.assertEqual("Steve", self.steve.name)
     def test_customer_has_wallet(self):
-        pass
+        self.assertEqual(100, self.steve.wallet)
     def test_spend_money_works(self):
-        pass
+        self.assertEqual(5, self.steve.spend_money(5))
+        self.assertEqual(95, self.steve.wallet)
     def test_buy_drink_works(self):
+        self.assertEqual(2, self.steve.buy_drink(self.americano))
+        self.assertEqual(98, self.steve.wallet)
+
+    # A CoffeeShop should be able to sell a drink to a customer and increase it's till by the price of Drink. 
+    # Hint: Use a Customer method you already have.
+    def test_coffee_shop_can_sell_drink(self):
         pass
